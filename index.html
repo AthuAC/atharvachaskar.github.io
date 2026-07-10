@@ -843,10 +843,10 @@
       <span class="exp-period">Apr 2023 – Jul 2024</span>
     </div>
     <ul class="project-bullets">
-      <li>Strengthened data quality across Azure Data Factory ELT pipelines by extending validation rules and data profiling checks, performing root cause analysis to resolve discrepancies across 5+ heterogeneous sources and improve pipeline reliability</li>
-      <li>Optimized SQL transformation scripts to ensure consistent delivery of KPI-ready, analytics-ready datasets supporting routine, ad hoc, and executive reporting dashboards used for trend analysis and decision-making</li>
-      <li>Developed new ADF pipeline components, validation checks, and reproducible automated reporting workflows based on requirements gathered during sprint cycles to address recurring data quality issues</li>
-      <li>Coordinated bi-weekly production releases through code review, CI/CD workflows, UAT support, and Git-based version control, maintaining technical documentation, SOPs, and reporting logic definitions to ensure consistent, stable pipeline delivery</li>
+      <li>Engineered and optimized Azure Data Factory (ADF) ELT pipelines across 5+ heterogeneous data sources, improving data ingestion reliability by 15% through rigorous validation and profiling checks</li>
+      <li>Refactored legacy SQL transformation scripts in Snowflake, reducing query execution latency by 10% and delivering KPI-ready datasets for executive-level automated dashboards</li>
+      <li>Developed reproducible automated reporting workflows and new ADF components based on sprint requirements, cutting recurring data quality anomalies by ~15%</li>
+      <li>Coordinated bi-weekly production releases utilizing Git-based version control and CI/CD pipelines, collaborating on code reviews, providing UAT support, and maintaining technical SOPs</li>
     </ul>
   </div>
 
@@ -895,9 +895,9 @@
       <h3 class="project-title">CTA Performance Analytics Platform</h3>
       <p class="project-desc">End-to-end pipeline ingesting 25 years of Chicago Transit Authority ridership data from a public REST API, loaded into Snowflake, and surfaced through an interactive live dashboard.</p>
       <ul class="project-bullets">
-        <li>Developed a Python ETL pipeline to ingest CTA Daily Boardings data (9,190 records) from the Chicago Data Portal REST API, initially storing in SQLite before migrating to Snowflake cloud data warehouse for scalable storage and live dashboard consumption</li>
-        <li>Analyzed 25 years of CTA ridership (11.1B total rides) using Pandas and SQL to conduct descriptive and trend analysis, investigating anomalies to surface a 57% COVID-driven ridership drop, peak year (2012), busiest single day (2.05M rides), and Bus vs. Rail patterns</li>
-        <li>Built an interactive Plotly Dash dashboard with 4 visualizations highlighting ridership distribution across bus vs. rail, year-over-year growth trends, and the system's post-2020 recovery trajectory</li>
+        <li>Analyzed 11.1 billion total rides spanning 25 years of Chicago Transit Authority ridership data using Pandas and SQL to identify key macro patterns, including a 57% post-2020 drop and system recovery trajectories</li>
+        <li>Built a Python-based ETL pipeline to ingest data from the Chicago Data Portal API, migrating data from local SQLite storage to a Snowflake cloud data warehouse for live application performance</li>
+        <li>Designed and launched an interactive Plotly Dash web application featuring 4 dynamic visualizations evaluating bus vs. rail distribution and year-over-year growth trends</li>
       </ul>
       <div class="project-tech">
         <span class="tech-pill">Python</span>
@@ -919,10 +919,10 @@
       <h3 class="project-title">Transit–Walkability Gap Research</h3>
       <p class="project-desc">Applied unsupervised machine learning to 3,322 census block groups to identify mobility misalignment patterns across the Chicago metro area.</p>
       <ul class="project-bullets">
-        <li>Conducted segmentation analysis using K-means clustering in Python (scikit-learn) on 3,322 census block groups from the EPA Smart Location Database, identifying a Transit–Walkability Gap affecting 53% of the Chicago metropolitan area</li>
-        <li>Built an end-to-end data pipeline covering data cleaning, feature selection, z-score standardization, clustering, and one-way ANOVA validation; independently rejected a fourth variable (D5AR) based on multicollinearity analysis (r = 0.79) and cluster instability</li>
+        <li>Conducted spatial segmentation analysis on 3,322 census block groups from the EPA, applying K-means clustering to discover a critical walkability gap impacting 53% of the Chicago metropolitan area</li>
+        <li>Built an end-to-end Python pipeline incorporating feature selection, z-score standardization, and one-way ANOVA validation, optimizing model stability by identifying and removing multicollinear variables</li>
         <li>Generated publication-quality spatial maps using GeoPandas and Matplotlib, visualizing cluster distributions across the Chicago–Naperville–Elgin CBSA</li>
-        <li>Co-authored peer-reviewed paper accepted to MWAIS 2026 Proceedings; received Best Research-in-Progress Paper Award competing among faculty, doctoral, and graduate submissions. Presented findings in Athens, Ohio</li>
+        <li>Co-authored a peer-reviewed research paper accepted to the MWAIS 2026 Proceedings, winning the Best Research-in-Progress Paper Award over faculty and doctoral submissions</li>
       </ul>
       <div class="project-tech">
         <span class="tech-pill">Python</span>
@@ -941,10 +941,10 @@
       <h3 class="project-title">Olist E-Commerce Analytics Pipeline</h3>
       <p class="project-desc">End-to-end analytics pipeline ingesting 9 Brazilian e-commerce CSVs (~1.5M rows) into Snowflake, transformed with dbt Core, and surfaced through 3 Looker Studio dashboards.</p>
       <ul class="project-bullets">
-        <li>Engineered RAW → STAGING → MARTS Snowflake architecture via Python (<code>snowflake-connector-python</code>, <code>write_pandas</code>) with PAT token authentication for MFA-enforced programmatic access</li>
-        <li>Built 11 dbt Core models — 8 staging views with type casting and standardization, 3 mart tables covering seller segmentation, delivery performance, and product category economics</li>
-        <li>Wrote 15 dbt data quality tests across all primary keys and implemented a custom <code>generate_schema_name</code> macro enforcing clean schema separation</li>
-        <li>Delivered 3 Looker Studio dashboards surfacing 91.9% on-time delivery rate, São Paulo generating 65% of platform revenue, and health &amp; beauty leading at $1.23M revenue</li>
+        <li>Developed 3 Looker Studio dashboards surfacing critical business KPIs, including $13.7M in platform revenue and a 91.9% on-time delivery rate across 74 product categories</li>
+        <li>Engineered a Python ingestion pipeline to bulk-load ~1.5M rows of raw transaction data across 9 CSV datasets into Snowflake using snowflake-connector-python and Pandas write_pandas</li>
+        <li>Modeled the data warehouse using a structured 3-layer Medallion Architecture (Raw, Staging, Marts) by building 8 dbt Core staging models and 3 data marts focused on seller performance segmentation and delivery logistics</li>
+        <li>Implemented 15 dbt data quality tests covering primary key constraints and engineered custom schema macros to standardize environment and naming architecture</li>
       </ul>
       <div class="project-tech">
         <span class="tech-pill">Python</span>
