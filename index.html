@@ -557,6 +557,7 @@
   }
 
   .exp-card:hover { border-color: var(--border2); }
+  .exp-card + .exp-card { margin-top: 1.5rem; }
 
   .exp-header {
     display: flex;
@@ -836,11 +837,31 @@
 <section id="experience">
   <p class="section-label">Background</p>
   <h2 class="section-title">Experience</h2>
+
+  <div class="exp-card reveal">
+    <div class="exp-header">
+      <div>
+        <p class="exp-role">Data Research Assistant</p>
+        <p class="exp-company">University of Illinois, Springfield · Springfield, Illinois</p>
+      </div>
+      <span class="exp-period">Oct 2024 – May 2026</span>
+    </div>
+    <ul class="project-bullets">
+      <li>Conducted spatial segmentation analysis on 3,322 census block groups from the EPA Smart Location Database, applying K-means clustering to identify a Transit-Walkability Gap affecting 53% of the Chicago metropolitan area neighborhoods.</li>
+      <li>Built an end-to-end Python pipeline incorporating feature selection, z-score standardization, and one-way ANOVA validation, optimizing model stability by identifying and removing multicollinear variables.</li>
+      <li>Generated publication-quality spatial maps using GeoPandas and Matplotlib, visualizing cluster distributions across the Chicago–Naperville–Elgin CBSA.</li>
+      <li>Co-authored a peer-reviewed research paper published in the MWAIS 2026 Conference Proceedings and received the Best Research-in-Progress Paper Award at the 21st Annual Midwest Association for Information Systems Conference, Athens, Ohio.</li>
+    </ul>
+    <div class="project-links" style="margin-top: 1.25rem;">
+      <a href="https://aisel.aisnet.org/mwais2026/" target="_blank" rel="noopener" class="project-link">Read Publication ↗</a>
+    </div>
+  </div>
+
   <div class="exp-card reveal">
     <div class="exp-header">
       <div>
         <p class="exp-role">Associate Application Developer</p>
-        <p class="exp-company">Accenture · Data & Analytics · Pune, India</p>
+        <p class="exp-company">Accenture · Data &amp; Analytics · Pune, India</p>
       </div>
       <span class="exp-period">Apr 2023 – Jul 2024</span>
     </div>
@@ -916,31 +937,6 @@
         <a href="https://github.com/atharvachaskar/cta-analytics" target="_blank" rel="noopener" class="project-link ghost">GitHub ↗</a>
       </div>
     </div>
-
-    <!-- Transit-Walkability -->
-    <div class="project-card reveal">
-      <span class="project-tag teal">Applied Analytics &amp; Research</span>
-      <h3 class="project-title">Transit–Walkability Gap Research</h3>
-      <p class="project-desc">Applied unsupervised machine learning to 3,322 census block groups to identify mobility misalignment patterns across the Chicago metro area.</p>
-      <div class="project-stats-highlight" style="margin: 0.75rem 0; font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">3,322 Census Block Groups &middot; 53% Chicago Metro Transit-Walkability Gap</div>
-      <ul class="project-bullets">
-        <li>Conducted spatial and statistical analysis of 3,322 census block groups using EPA data to identify transit and walkability patterns across the Chicago metropolitan area.</li>
-        <li>Applied K-means clustering, feature selection, z-score standardization, and one-way ANOVA to segment geographic areas and validate analytical results.</li>
-        <li>Co-authored a peer-reviewed research paper accepted into the MWAIS 2026 Proceedings and received the Best Research-in-Progress Paper Award.</li>
-      </ul>
-      <div class="project-tech">
-        <span class="tech-pill">Python</span>
-        <span class="tech-pill">scikit-learn</span>
-        <span class="tech-pill">GeoPandas</span>
-        <span class="tech-pill">Matplotlib</span>
-        <span class="tech-pill">K-means</span>
-        <span class="tech-pill">ANOVA</span>
-      </div>
-      <div class="project-links">
-        <a href="https://aisel.aisnet.org/mwais2026/" target="_blank" rel="noopener" class="project-link">Read Publication ↗</a>
-      </div>
-    </div>
-
 
     <!-- Olist -->
     <div class="project-card reveal">
