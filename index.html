@@ -854,6 +854,7 @@
     </ul>
     <div class="project-links" style="margin-top: 1.25rem;">
       <a href="https://aisel.aisnet.org/mwais2026/" target="_blank" rel="noopener" class="project-link">Read Publication ↗</a>
+      <a href="#chs-project" class="project-link ghost">Live Tool: Commute-Honest Housing Score ↓</a>
     </div>
   </div>
 
@@ -912,6 +913,34 @@
   </div>
 
   <div class="projects-grid">
+
+    <!-- CHS -->
+    <div class="project-card reveal" id="chs-project">
+      <span class="project-tag teal">Applied Analytics &amp; Product</span>
+      <h3 class="project-title">Commute-Honest Housing Score (CHS)</h3>
+      <p class="project-desc">Productized peer-reviewed clustering research (MWAIS 2026) into a live, address-level scoring tool — replaced a single opaque "walkability" number with four transparent, weighted sub-scores covering commute, walkability, transit frequency, and infrastructure-vs-jobs mismatch.</p>
+      <div class="project-stats-highlight" style="margin: 0.75rem 0; font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">581,834 Chicago addresses scored &middot; Full city coverage</div>
+      <ul class="project-bullets">
+        <li>Productized peer-reviewed clustering research (MWAIS 2026, Best Research-in-Progress Paper) into a live, address-level scoring tool — replaced a single opaque "walkability" number with four transparent, weighted sub-scores covering commute, walkability, transit frequency, and infrastructure-vs-jobs mismatch.</li>
+        <li>Built an end-to-end pipeline (DuckDB + dbt Core, medallion architecture, 70/70 data quality tests) computing real transit+walk travel times via GTFS schedules and OpenStreetMap routing (r5py) — scaled to full-city coverage via a 9,525-point grid-based precompute architecture instead of 40+ hours of brute-force routing.</li>
+        <li>Validated composite scores against real Chicago geography with zero manual tuning (Loop/Near North Side highest, Hegewisch lowest) and replicated the original paper's 53% Transit-Walkability Gap finding almost exactly.</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-pill">DuckDB</span>
+        <span class="tech-pill">dbt Core</span>
+        <span class="tech-pill">Python</span>
+        <span class="tech-pill">r5py</span>
+        <span class="tech-pill">scikit-learn</span>
+        <span class="tech-pill">FastAPI</span>
+        <span class="tech-pill">Leaflet</span>
+        <span class="tech-pill">Docker</span>
+      </div>
+      <div class="project-links">
+        <a href="https://chs-api.onrender.com" target="_blank" rel="noopener" class="project-link">Live Demo ↗</a>
+        <a href="https://github.com/atharvachaskar/commute-honest-housing-score" target="_blank" rel="noopener" class="project-link ghost">GitHub ↗</a>
+        <a href="https://aisel.aisnet.org/mwais2026/" target="_blank" rel="noopener" class="project-link ghost">MWAIS Paper ↗</a>
+      </div>
+    </div>
 
     <!-- CTA -->
     <div class="project-card reveal">
@@ -1021,8 +1050,9 @@
     <div class="skill-group reveal">
       <p class="skill-group-title">Data Platforms</p>
       <div class="skill-list">
-        <span class="skill-chip">Azure Data Factory</span>
+        <span class="skill-chip">DuckDB</span>
         <span class="skill-chip">Snowflake</span>
+        <span class="skill-chip">Azure Data Factory</span>
         <span class="skill-chip">dbt Core</span>
         <span class="skill-chip">ETL/ELT</span>
         <span class="skill-chip">Data Transformation</span>
@@ -1035,6 +1065,8 @@
       <div class="skill-list">
         <span class="skill-chip">Git</span>
         <span class="skill-chip">CI/CD</span>
+        <span class="skill-chip">Docker</span>
+        <span class="skill-chip">FastAPI</span>
         <span class="skill-chip">Agile/Scrum</span>
         <span class="skill-chip">UAT</span>
         <span class="skill-chip">Plotly Dash</span>
