@@ -455,6 +455,157 @@
     background: rgba(255,255,255,0.03);
   }
 
+  /* PROJECT PREVIEWS & CAROUSEL */
+  .project-preview {
+    margin: -2rem -2.25rem 1.5rem -2.25rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background: #09090b;
+    border-top-left-radius: calc(1rem - 1px);
+    border-top-right-radius: calc(1rem - 1px);
+    overflow: hidden;
+  }
+
+  .preview-media-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #0a0a0c;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover .preview-img {
+    transform: scale(1.02);
+  }
+
+  /* Carousel Specific */
+  .carousel-track-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #0a0a0c;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(14, 14, 15, 0.8);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(200, 245, 90, 0.35);
+    color: var(--accent);
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    z-index: 5;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    user-select: none;
+  }
+
+  .carousel-btn:hover {
+    background: rgba(200, 245, 90, 0.2);
+    border-color: var(--accent);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .carousel-btn.prev { left: 0.75rem; }
+  .carousel-btn.next { right: 0.75rem; }
+
+  .carousel-indicators {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.4rem;
+    z-index: 5;
+    background: rgba(14, 14, 15, 0.65);
+    padding: 0.25rem 0.55rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.2s, width 0.2s;
+  }
+
+  .carousel-dot.active {
+    background: var(--accent);
+    width: 14px;
+    border-radius: 3px;
+  }
+
+  .preview-caption {
+    padding: 0.45rem 1rem;
+    background: rgba(14, 14, 15, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 0.75rem;
+    color: #8a8680;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .preview-caption a {
+    color: #8a8680;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .preview-caption a:hover {
+    color: var(--accent);
+  }
+
   /* AWARD BANNER */
   .award-banner {
     background: linear-gradient(135deg, rgba(200,245,90,0.08), rgba(78,205,196,0.06));
@@ -917,6 +1068,28 @@
 
     <!-- CHS -->
     <div class="project-card reveal" id="chs-project">
+      <div class="project-preview carousel" data-carousel>
+        <div class="carousel-track-container">
+          <div class="carousel-track">
+            <div class="carousel-slide active">
+              <img src="chs-1.png" alt="Commute-Honest Housing Score Full City Map" class="preview-img" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="chs-2.png" alt="Commute-Honest Housing Score Address Breakdown" class="preview-img" loading="lazy">
+            </div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Previous screenshot" type="button">‹</button>
+          <button class="carousel-btn next" aria-label="Next screenshot" type="button">›</button>
+          <div class="carousel-indicators">
+            <span class="carousel-dot active"></span>
+            <span class="carousel-dot"></span>
+          </div>
+        </div>
+        <div class="preview-caption">
+          <span>Address-Level Scoring &amp; Routing</span>
+          <a href="https://chs-api.onrender.com" target="_blank" rel="noopener">Interactive Live Demo ↗</a>
+        </div>
+      </div>
       <span class="project-tag teal">Applied Analytics &amp; Product</span>
       <h3 class="project-title">Commute-Honest Housing Score (CHS)</h3>
       <p class="project-desc">Productized peer-reviewed clustering research (MWAIS 2026) into a live, address-level scoring tool — replaced a single opaque "walkability" number with four transparent, weighted sub-scores covering commute, walkability, transit frequency, and infrastructure-vs-jobs mismatch.</p>
@@ -945,6 +1118,15 @@
 
     <!-- CTA -->
     <div class="project-card reveal">
+      <div class="project-preview">
+        <div class="preview-media-wrap">
+          <img src="cta-1.png" alt="CTA Performance Analytics Platform Dashboard" class="preview-img" loading="lazy">
+        </div>
+        <div class="preview-caption">
+          <span>25-Year Ridership Analytics Dashboard</span>
+          <a href="https://cta-analytics.onrender.com" target="_blank" rel="noopener">Interactive Live Dashboard ↗</a>
+        </div>
+      </div>
       <span class="project-tag">Data Analytics</span>
       <h3 class="project-title">CTA Performance Analytics Platform</h3>
       <p class="project-desc">Analyzed 25 years of Chicago Transit Authority ridership data to uncover long-term mobility trends, post-pandemic recovery patterns, and differences between bus and rail usage.</p>
@@ -970,6 +1152,32 @@
 
     <!-- Olist -->
     <div class="project-card reveal">
+      <div class="project-preview carousel" data-carousel>
+        <div class="carousel-track-container">
+          <div class="carousel-track">
+            <div class="carousel-slide active">
+              <img src="olist-1.png" alt="Olist Seller Performance Dashboard" class="preview-img" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="olist-2.png" alt="Olist Delivery Performance Dashboard" class="preview-img" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="olist-3.png" alt="Olist Product Category Economics Dashboard" class="preview-img" loading="lazy">
+            </div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Previous screenshot" type="button">‹</button>
+          <button class="carousel-btn next" aria-label="Next screenshot" type="button">›</button>
+          <div class="carousel-indicators">
+            <span class="carousel-dot active"></span>
+            <span class="carousel-dot"></span>
+            <span class="carousel-dot"></span>
+          </div>
+        </div>
+        <div class="preview-caption">
+          <span>Looker Studio Executive &amp; KPI Dashboards</span>
+          <a href="https://github.com/atharvachaskar/olist-ecommerce-analytics" target="_blank" rel="noopener">View Dashboards ↗</a>
+        </div>
+      </div>
       <span class="project-tag">Business Intelligence &amp; Analytics</span>
       <h3 class="project-title">Olist E-Commerce Analytics Pipeline</h3>
       <p class="project-desc">Analyzed approximately 1.5 million e-commerce transactions across nine datasets to evaluate revenue, delivery performance, seller activity, and product-category trends.</p>
@@ -993,6 +1201,32 @@
 
     <!-- Chicago Crime -->
     <div class="project-card reveal">
+      <div class="project-preview carousel" data-carousel>
+        <div class="carousel-track-container">
+          <div class="carousel-track">
+            <div class="carousel-slide active">
+              <img src="crime-1.png" alt="Chicago Crime Executive Overview Dashboard" class="preview-img" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="crime-2.png" alt="Chicago Crime Geographic Hotspot Analysis" class="preview-img" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="crime-3.png" alt="Chicago Crime Time and Arrest Insights" class="preview-img" loading="lazy">
+            </div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Previous screenshot" type="button">‹</button>
+          <button class="carousel-btn next" aria-label="Next screenshot" type="button">›</button>
+          <div class="carousel-indicators">
+            <span class="carousel-dot active"></span>
+            <span class="carousel-dot"></span>
+            <span class="carousel-dot"></span>
+          </div>
+        </div>
+        <div class="preview-caption">
+          <span>Tableau Operational &amp; Hotspot Dashboards</span>
+          <a href="https://github.com/atharvachaskar/chicago-crime-analytics-dashboard" target="_blank" rel="noopener">View Dashboards ↗</a>
+        </div>
+      </div>
       <span class="project-tag amber">Data Analytics &amp; Predictive Modeling</span>
       <h3 class="project-title">Chicago Crime Analytics &amp; Predictive Modeling</h3>
       <p class="project-desc">Large-scale preprocessing and analysis of 750K+ Chicago crime records with Tableau dashboards and machine learning models for pattern detection.</p>
@@ -1108,6 +1342,60 @@
   document.querySelectorAll('.reveal').forEach((el, i) => {
     el.style.transitionDelay = (i % 4) * 0.08 + 's';
     observer.observe(el);
+  });
+
+  // Carousel functionality
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track ? track.children : []);
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    const dotsNav = carousel.querySelector('.carousel-indicators');
+    const dots = dotsNav ? Array.from(dotsNav.children) : [];
+    let currentIndex = 0;
+
+    if (slides.length <= 1) {
+      if (nextBtn) nextBtn.style.display = 'none';
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (dotsNav) dotsNav.style.display = 'none';
+      return;
+    }
+
+    const updateSlide = (index) => {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+      currentIndex = index;
+    };
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const nextIndex = (currentIndex + 1) % slides.length;
+        updateSlide(nextIndex);
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlide(prevIndex);
+      });
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        updateSlide(index);
+      });
+    });
   });
 </script>
 
